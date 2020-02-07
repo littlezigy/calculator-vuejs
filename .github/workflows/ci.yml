@@ -1,10 +1,9 @@
 name: Deploy GH Pages
 
-on:
-  push:
-    branches:
-	  - master
+on: [push]
 
-steps:
-  - run: npm install
-  - run: npm run build
+jobs:
+  build:
+    steps:
+      - run: npm install
+      - run: npm run build
