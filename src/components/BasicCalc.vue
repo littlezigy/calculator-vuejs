@@ -8,13 +8,14 @@
 			<p @click = 'backspace()' class = 'fas fa-backspace'></p>
 			<p @click = "evalKeypress('%')">%</p>
 			<p @click = 'press("/")'>&#247;</p>
-			<p v-for = 'number in nums1' @click = 'evalKeypress(number)'>{{number}}</p>
+
+			<p v-for = 'number in 3' @click = 'evalKeypress(number)'>{{number}}</p>
 			<p @click = 'evalKeypress("+")'>+</p>
 
-			<p v-for = 'number in nums2' @click = 'evalKeypress(number)'>{{number}}</p>
+			<p v-for = 'number in 3' @click = 'evalKeypress(number + 3)'>{{number + 3}}</p>
 			<p @click = 'evalKeypress("-")'>-</p>
 
-			<p v-for = 'number in nums3' @click = 'evalKeypress(number)'>{{number}}</p>
+			<p v-for = 'number in 3' @click = 'evalKeypress(number + 6)'>{{number + 6}}</p>
 			<p @click = 'evalKeypress("*")'>&times;</p>
 
 			<p @click = "evalKeypress('neg')">&plusmn;</p>
@@ -29,10 +30,7 @@
 export default {
     data() {
         return {
-			nums1: ['1', '2', '3'],
-			nums2: ['4', '5', '6',],
-			nums3: ['7', '8', '9'],
-            numbers: ['1','2','3','4','5','6','7','8','9','0'],
+            numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
             operators: ['+', '-', '/', '*'],
             commands: ['neg', 'c', '%', 'ans', '='],
             display: "0",
@@ -48,7 +46,7 @@ export default {
     methods: {
         press(key) {
             console.log("__________Key press___________\n", key);
-            if(this.numbers.includes(key)) {
+            if(this.numbers.includes(parseInt(key))) {
                 this.inputDigit(key);
             } else if(key == '.') {
                 this.inputDecimal();
@@ -106,8 +104,8 @@ export default {
                 this.display = key;
                 this.expression = key;
             } else {
-                this.display +=key;
-                this.expression += key;
+                this.display += `${key}`;
+                this.expression += `${key}`;
             }
             this.calculator.lastkeypressed = key;
             console.log(this.expression);
