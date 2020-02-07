@@ -6,5 +6,5 @@ on:
 	  - master
 
 steps:
-    - run: npm install
-	- run: npm run build
+  - run: npm install
+  - run: npm run build
