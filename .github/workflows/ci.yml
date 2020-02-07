@@ -13,10 +13,10 @@ jobs:
     name: Push to gh-pages branch
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub Pages Deploy
-        uses: maxheld83/ghpages@v0.2.1
+      - name: GitHub Pages Deploy 2
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          env: |
-            BUILD_DIR: "dist/"
-          secrets: |
-            GH_PAT: ${{ secrets.GH_PAT }}
+          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          BRANCH: gh-pages
+          FOLDER: dist
+        
