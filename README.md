@@ -1,6 +1,6 @@
-# calculator-vuejs
-This is a calculator written with Vue.js
+# Vue.js Calculator
 
+![Deploy GH Pages](https://github.com/littlezigy/calculator-vuejs/workflows/Deploy%20GH%20Pages/badge.svg?branch=master)
 ## Build Setup
 
 ``` bash
