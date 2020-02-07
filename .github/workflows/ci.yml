@@ -7,7 +7,12 @@ jobs:
     name: Build Vue
     runs-on: ubuntu-latest
     steps:
+      - name: Run Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 8.10
       - run: |
+          npm install
           npm run build
   deploy:
     name: Push to gh-pages branch
