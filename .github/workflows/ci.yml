@@ -7,11 +7,10 @@ jobs:
     name: Build Vue
     runs-on: ubuntu-latest
     steps:
-      - name: Run Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8.10
-      - run: npm ci
+      - uses: actions/checkout@v2.0.0
+      - run: |
+          npm install
+          npm build
   deploy:
     name: Push to gh-pages branch
     runs-on: ubuntu-latest
