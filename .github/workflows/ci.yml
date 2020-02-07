@@ -2,8 +2,6 @@ name: Deploy GH Pages
 
 on: [push]
 
-jobs:
-  build:
-    steps:
-      - run: npm install
-      - run: npm run build
+steps:
+  - run: npm install
+  - run: npm run build
