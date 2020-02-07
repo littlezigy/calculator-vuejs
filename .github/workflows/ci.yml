@@ -11,8 +11,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 8.10
-      - run: npm install
-      - run: npm run build
+      - run: npm ci
   deploy:
     name: Push to gh-pages branch
     runs-on: ubuntu-latest
